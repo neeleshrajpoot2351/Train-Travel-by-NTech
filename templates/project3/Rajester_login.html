@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'project3/css/Rajester_login.css' %}">
+  <link rel="stylesheet" href="{% static 'project3/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "project3/PrecticeWebsiteBase.html"%}
+  {% block MainContent%}
+  <main>
+    <h1>Register Here</h1>
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <label for="id_first_name">First Name:</label>
+        {{ form.first_name }}
+
+        <label for="id_last_name">Last Name:</label>
+        {{ form.last_name }}
+
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+
+        <label for="id_password">Password:</label>
+        {{ form.password }}
+
+        <button type="submit">Register</button>
+    </form>
+  </main>
+  {% endblock %}
+</body>
+</html>

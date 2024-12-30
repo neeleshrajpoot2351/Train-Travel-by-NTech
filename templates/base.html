@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <title>{{title}}</title>
+</head>
+<body >
+    {% block content %}
+    {% endblock %}
+    {% for n in clist %}
+    <div>{{n}}</div>
+    {% endfor %}
+    <table border='2' cellpadding='10'>
+        <tr>
+            <th>Name</th>
+            <th>Phone NO</th>
+        </tr>
+        {% for d in student%}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    {% if number|length > 0 %}
+
+        {% for n in number %}
+            {% if n > 20 %}
+                <div>{{n}}</div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        No Data Found
+    {% endif %}
+
+</body>
+</html>

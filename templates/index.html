@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link>
+    
+    <title>{{title}}</title>
+    
+    
+</head>
+<body>
+   <h1>Product List</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.description }}</td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+    {% for n in Clist %}  
+    <div>{{forloop.counter}}{{n}}<div>
+    {%endfor%}
+
+    <table border = 2>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        {% for d in student_detalse%}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor%}
+    <table>
+        {% if numbers|length > 0 %}
+            {% for n in numbers %}
+                {% if n > 20 %}
+                    <div>{{n}}</div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            No Data Found
+        {% endif %}
+</body>
+</html>

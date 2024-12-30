@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeFineTrain</title>
+  <link rel="stylesheet" href="{% static 'project3/css/PrecticeWebsiteStyle1.css' %}">
+    <title>Train Search Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    {% include "project3/PrecticeWebsiteBase.html" %}
+    {% block MainContent %}
+    <h1>Train Search Results</h1>
+    <h1>Trains from {{ from_station }} to {{ to_station }}:</h1>
+
+{% if trains %}
+    <ul>
+        {% for train in trains %}
+            <li>
+                <strong>{{ train.train_name }}</strong> ({{ train.train_number }}) <br>
+                From: {{ train.starting_point }} - To: {{ train.destination }} <br>
+                Intermediate Stops: {{ train.intermediate_stations|join:", " }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No trains found matching your search criteria.</p>
+{% endif %}
+
+<a href="{% url 'home' %}">Back to Home</a>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Celculater</title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-12">
+                <h3>ADD SUB MUL DEV</h3>
+                <form method="post">
+                    
+                    {% if error %}
+                    <div class="alert alert-danger" role="alert">
+                        Please Enter The Value
+                    </div>
+                    {% endif %}
+                    <br><br>
+                    {% csrf_token %}
+                    <label>Value 1</label>
+                    <input type="text" name="num1" class="form-control"/>
+                    <br><br>
+                    <label>Select OPR....</label>
+                    <select name='opr' class='form-control'>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                    <br><br>
+                    <label>Value 2</label>
+                    <input type="text" name="num2" class="form-control"/>
+                    <br><br>
+                    <button>Celculat</button>
+                    <br><br>
+                    <label>Output</label>
+                    <input type="text" value="{{c}}" class="form-control"/>
+                </form>
+
+                <h3>EvenOdd</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <label>Number</label>
+                    <input type="text" name='num' />
+                    <br><br>
+                    <button>Even/Odd</button>
+                    <br><br>
+                    <label>Output</label>
+                    <input type="text" value="{{d}}" />
+                </form>
+
+                <h3>Markseet</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <label>Sub1 Marks</label>
+                    <input type="text" name='sub1' />
+                    <br><br>
+                    <label>Sub2 Marks</label>
+                    <input type="text" name='sub2' />
+                    <br><br>
+                    <label>Sub3 Marks</label>
+                    <input type="text" name='sub3' />
+                    <br><br>
+                    <label>Sub4 Marks</label>
+                    <input type="text" name='sub4' />
+                    <br><br>
+                    <label>Sub5 Marks</label>
+                    <input type="text" name='sub5' />
+                    <br><br>
+                    <button>Celculat</button>
+                    <br>
+                    <label>Total Marks</label>
+                    <input type="text" value="{{s}}" name='total'/>
+                    <br><br>
+                    <label>Percentage</label>
+                    <input tyep="text" value="{{p}}" name='Per'/>
+                    <br><br>
+                    <label>Devisan</label>
+                    <input tyep="text" value="{{n}}" name='Dev'/>
+                    <br><br>
+
+
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>    
