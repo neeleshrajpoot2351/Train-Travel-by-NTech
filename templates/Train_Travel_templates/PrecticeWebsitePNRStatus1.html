@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+  {% block MainContent%}
+  <main>
+    <h2>PNR Status</h2>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <h2>Train Details</h2>
+        <p><strong>PNR Number:</strong> {{ data.pnrNumber }}</p>
+        <p><strong>Date of Journey:</strong> {{ data.dateOfJourney }}</p>
+        <p><strong>Train Name:</strong> {{ data.trainName }}</p>
+        <p><strong>Train Number:</strong> {{ data.trainNumber }}</p>
+        <p><strong>From:</strong> {{ data.sourceStation }}</p>
+        <p><strong>To:</strong> {{ data.destinationStation }}</p>
+        <p><strong>Class:</strong> {{ data.journeyClass }}</p>
+        <p><strong>Chart Status:</strong> {{ data.chartStatus }}</p>
+        <p><strong>Distance:</strong> {{ data.distance }} km</p>
+
+        <h2>Passenger Details</h2>
+        <ul>
+            {% for passenger in data.passengerList %}
+                <li>
+                    <strong>Passenger {{ passenger.passengerSerialNumber }}:</strong>
+                    <ul>
+                        <li>Booking Status: {{ passenger.bookingStatusDetails }}</li>
+                        <li>Current Status: {{ passenger.currentStatusDetails }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  </main>
+  {% endblock %}
+</body>
+</html>

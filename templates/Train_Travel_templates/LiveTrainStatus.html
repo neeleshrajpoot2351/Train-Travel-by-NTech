@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Train Status</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+
+</head>
+<body>
+    {% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+    {% block MainContent%}
+  <h1>Check Live Train Status</h1>
+  <form id="train-status-form" class="train-form" method="POST" action="{% url 'live_train_status' %}">
+    {% csrf_token %}
+    <input type="text" name="train_number" id="train-number" placeholder="Train Number" required>
+    <input type="date" name="departure_date" class="departure-date" required>
+    <button type="submit" class="submit-btn">Get Train Status</button>
+  </form>
+  {% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeFineTrain</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+  
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html" %}
+  {% block MainContent %}
+    <main>
+      <h2 class="train-details-title">Train Details</h2>
+      {% if train_data.body %}
+        <div class="train-details-container">
+          <h3>{{ train_data.body.0.trains.0.trainName }}</h3>
+          <p><strong>Train Number:</strong> {{ train_data.body.0.trains.0.trainNumber }}</p>
+          <p><strong>Origin:</strong> {{ train_data.body.0.trains.0.origin }}</p>
+          <p><strong>Destination:</strong> {{ train_data.body.0.trains.0.destination }}</p>
+          <h4>Schedule:</h4>
+          <table class="train-schedule-table">
+            <thead>
+              <tr>
+                <th>Station Name</th>
+                <th>Station Code</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for schedule in train_data.body.0.trains.0.schedule %}
+              <tr>
+                <td>{{ schedule.stationName }}</td>
+                <td>{{ schedule.stationCode }}</td>
+                <td>{{ schedule.arrivalTime }}</td>
+                <td>{{ schedule.departureTime }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <p>No train data found.</p>
+      {% endif %}
+    </main>
+  {% endblock %}
+</body>
+</html>

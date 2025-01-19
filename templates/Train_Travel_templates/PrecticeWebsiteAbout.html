@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html" %}
+  {% block MainContent%}
+  <main>
+    <section id="about">
+      <h2>About Train Travel</h2>
+      <p>
+          Welcome to <strong>Train Travel</strong>, a project designed and developed with passion at <strong>NTech</strong>. Train Travel is more than just a platform—it's an innovative approach to simplifying and enhancing the travel experience for train enthusiasts and daily commuters alike.
+      </p>
+      <p>
+          At NTech, we believe that technology can transform the way we connect with the world. With Train Travel, we aim to make planning, booking, and managing train journeys seamless and efficient. Our platform is designed with the traveler in mind, offering user-friendly features, real-time updates, and a commitment to reliability.
+      </p>
+      <p>
+          As the lead developer, I have brought together my expertise in web technologies and my drive for creating impactful solutions to make Train Travel a reality. This project reflects NTech’s mission to innovate and provide meaningful tools that improve everyday experiences.
+      </p>
+      <p>
+          Thank you for visiting our website. We look forward to making your train journeys better, one click at a time!
+      </p>
+  </section>
+  
+  </main>
+  {% endblock %}
+</body>
+</html>

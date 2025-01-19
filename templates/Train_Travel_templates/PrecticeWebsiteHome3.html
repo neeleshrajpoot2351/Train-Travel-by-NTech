@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeFineTrain</title>
+    <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+    <title>Train Search Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        /* Optional: Add some styling for better readability */
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    {% include "Train_Travel_templates/PrecticeWebsiteBase.html" %}
+    {% block MainContent %}
+    <h1>Train Search Results</h1>
+    <h1>Train Details for {{ train.train_name }} ({{ train.train_number }})</h1>
+
+    {% if stop_details %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Stop Number</th>
+                    <th>Station</th>
+                    <th>Arrival Time</th>
+                    <th>Departure Time</th>
+                    <th>Platform</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stop in stop_details %}
+                <tr>
+                    <td>{{ stop.stop_number }}</td>
+                    <td>{{ stop.station }}</td>
+                    <td>{{ stop.arrival_time }}</td>
+                    <td>{{ stop.departure_time }}</td>
+                    <td>{{ stop.platform }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No details available for this train between the selected stations.</p>
+    {% endif %}
+
+    <a href="{% url 'home' %}">Back to Home</a>
+    {% endblock %}
+</body>
+</html>

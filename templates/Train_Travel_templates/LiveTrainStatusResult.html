@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Status Result</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+   
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+  {% block MainContent%}
+    
+  <h1>Train Status Result</h1>
+  {% if error %}
+    <p style="color: red;">{{ error }}</p>
+  {% else %}
+    <h2>Train Details</h2>
+    <p><strong>Train Name:</strong> {{ data.train_name }}</p>
+    <p><strong>Train Number:</strong> {{ data.train_number }}</p>
+    <p><strong>Current Status:</strong> {{ data.current_status }}</p>
+    <p><strong>Last Updated:</strong> {{ data.last_updated }}</p>
+
+    <h2>Station Details</h2>
+    <ul>
+      {% for station in data.stations %}
+        <li>
+          <strong>Station:</strong> {{ station.name }} <br>
+          <strong>Arrival:</strong> {{ station.actual_arrival_time }} <br>
+          <strong>Departure:</strong> {{ station.actual_departure_time }} <br>
+          <strong>Status:</strong> {{ station.status }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endblock %}
+</body>
+</html>

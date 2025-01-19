@@ -1,0 +1,17 @@
+{% load static %}
+<header>
+  <a href="{% url 'home' %}">
+    <img src="{% static 'Train_Travel_static/img/Train app logo1.png' %}" alt="Train App Logo">
+  </a>
+  <h2>Train Travel by NTech</h2>
+  <a href="{% url 'register'%}" id="reg"> Register/Login</a>
+</header>
+<nav>
+  <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+  <a href="{% url 'live_train_status' %}" class="{% if request.path == '/live-train-status' %}active{% endif %}">Live Train Status</a>
+  <a href="{% url 'about' %}" class="{% if request.path == '/PrecticeWebsiteAbout' %}active{% endif %}">About</a>
+  <a href="{% url 'PNR-Status' %}" class="{% if request.path == '/PrecticeWebsitePNRStatus' %}active{% endif %}">PNR Status</a>
+  <a href="{% url 'contects' %}" class="{% if request.path == '/PrecticeWebsiteContects' %}active{% endif %}">Contact</a>
+  
+</nav>
+

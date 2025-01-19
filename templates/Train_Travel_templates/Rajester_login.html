@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/Rajester_login.css' %}">
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+  {% block MainContent%}
+  <main>
+    <h1>Register Here</h1>
+    
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %};">
+            {{ message }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <label for="id_first_name">First Name:</label>
+        {{ form.first_name }}
+
+        <label for="id_last_name">Last Name:</label>
+        {{ form.last_name }}
+
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+
+        <label for="id_password">Password:</label>
+        {{ form.password }}
+
+        <button type="submit">Register</button>
+    </form>
+  </main>
+  {% endblock %}
+</body>
+</html>

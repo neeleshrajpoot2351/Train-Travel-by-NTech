@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeFineTrain</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+    <title>Train Search Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    {% include "Train_Travel_templates/PrecticeWebsiteBase.html" %}
+    {% block MainContent %}
+    <h1>Train Search Results</h1>
+    <h1>Trains from {{ from_station }} to {{ to_station }}</h1>
+
+    <table class="train-list-table">
+        <thead>
+            <tr>
+                <th>Train Name (Number)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if train_details %}
+                {% for detail in train_details %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'train_details' train_number=detail.train.train_number %}?from_station={{ from_station }}&to_station={{ to_station }}">
+                                {{ detail.train.train_name }} ({{ detail.train.train_number }})
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td class="no-train-message" colspan="1">No trains found between {{ from_station }} and {{ to_station }}.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    
+    
+    
+<a href="{% url 'home' %}">Back to Home</a>
+    {% endblock %}
+</body>
+</html>

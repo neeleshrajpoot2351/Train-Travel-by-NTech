@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body style="background-image: url('{% static 'Train_Travel_static/img/Vande bharat background img.jpeg' %}'); 
+             background-size: cover; 
+             background-repeat: no-repeat; 
+             background-attachment: fixed; 
+             background-position: center;">
+{% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+{% block MainContent%}
+<main>
+  <div class="train-info-form-container">
+    <h1>Welcome to Train Travel</h1>
+    <form class="train-form" method="GET" action="{% url 'HomeFindTrain' %}">
+        <input type="text" name="from_station" placeholder="from_station" required>
+        <input type="text" name="to_station" placeholder="to_station" required>
+        <button type="submit">Find Train</button>
+    </form>
+    </div>
+  <div class="train-info-form-container">
+    <h2>Get Train Information</h2>
+    <form method="POST" action="{% url 'fetch_train_info' %}">
+      {% csrf_token %}
+      <input type="text" name="train_number" placeholder="Enter Train Number" required>
+      <button type="submit">Fetch Train Info</button>
+    </form>
+  </div>
+</main>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html" %}
+  {%block MainContent%}
+  <main>
+    <div id='contect'>
+      <h3>Organization by NTech</h3>
+      <p><b>Phone No 1: </b>+91 7307845880</p>
+      <p><b>Phone No 2: </b>+91 8787253161</p>
+      <p><b>Email : </b>neeleshrajpoot2351@gmail.com</p>
+      <p><b>Address : </b>Jhansi, Bundelkhand </p>
+      <p>Get in touch with us.</p>
+    </div>
+  </main>
+  {% endblock %}
+</body>
+</html>

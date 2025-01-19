@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'Train_Travel_static/css/PrecticeWebsiteStyle1.css' %}">
+</head>
+<body>
+  {% include "Train_Travel_templates/PrecticeWebsiteBase.html"%}
+  {% block MainContent%}
+  <main>
+    <div>
+    <h2>PNR Status</h2>
+    <form method="POST" action="{% url 'fetch_pnr_status' %}">
+      {% csrf_token %}
+      <input type="text" name="pnr_number" placeholder="Enter PNR Number" required>
+      <button type="submit">Check PNR Status</button>
+    </form>
+    </div>
+  </main>
+  {% endblock %}
+</body>
+</html>
