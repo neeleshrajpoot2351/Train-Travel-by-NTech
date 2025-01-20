@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME', default='railway'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default=''),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
+        'HOST': 'autorack.proxy.rlwy.net',
+        'PORT': '55120',
         'OPTIONS':{'sslmode':'require'},
     }
 }
