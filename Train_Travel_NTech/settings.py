@@ -28,7 +28,7 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
 
 # Debug
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': config('DB_PASSWORD'),
+        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
         'HOST': 'autorack.proxy.rlwy.net',
         'PORT': '55120',
         'OPTIONS':{'sslmode':'require'},
