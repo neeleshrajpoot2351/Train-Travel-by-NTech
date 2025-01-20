@@ -74,12 +74,25 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Database name from your connection URL
+        'USER': 'postgres',  # Username from your connection URL
+        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',  # Password from your connection URL
+        'HOST': 'autorack.proxy.rlwy.net',  # Host from your connection URL
+        'PORT': '55120',  # Port from your connection URL
     }
 }
+
+
 
 
 # Password validation
