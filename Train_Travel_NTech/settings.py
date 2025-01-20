@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Train_Travel_app',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +119,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+CSRF_TRUSTED_ORIGINS = [
+    os.getenv('CSRF_TRUSTED_ORIGIN', 'https://web-production-5939.up.railway.app')
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
