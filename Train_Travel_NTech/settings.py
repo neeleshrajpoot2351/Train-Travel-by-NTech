@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,11 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i&xfi$ltepp68rg+o!6z5*7b_l@#y=)1m6ud=4#3q@rq-n3%^f'
+from decouple import config
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Secret Key
+SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
 
+# Debug
+DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = []
 
 
@@ -84,11 +87,11 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Database name from your connection URL
-        'USER': 'postgres',  # Username from your connection URL
-        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',  # Password from your connection URL
-        'HOST': 'autorack.proxy.rlwy.net',  # Host from your connection URL
-        'PORT': '55120',  # Port from your connection URL
+        'NAME': config('DB_NAME', default='railway'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD', default=''),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
