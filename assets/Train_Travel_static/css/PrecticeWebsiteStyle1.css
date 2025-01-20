@@ -1,0 +1,425 @@
+/* Existing styles you have in PrecticeWebsiteStyle1.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(62, 173, 83); /* Maintains the green header */
+  color: white; /* Text color for contrast */
+  padding: 10px 20px;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Adjust spacing between items */
+  position: relative;
+}
+
+header img {
+  width: 100px; /* Double the size */
+  height: auto;
+  cursor: pointer; /* Indicates it's clickable */
+}
+
+header h1 {
+  flex-grow: 1; /* Allow title to take up remaining space */
+  margin: 0;
+  text-align: center; /* Center the title text */
+  font-size: 1.5rem;
+}
+#reg {
+  background-color: rgb(10, 130, 222);
+  color: white;
+  padding: 10px;
+  border: 2px solid black;
+  text-align: right;
+}
+#contect{
+  background-color: #627b81dc;
+  border: 2px solid black;
+  padding: 20;
+}
+
+nav {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  position: sticky;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  min-height: calc(100vh - 50px); /* Adjust based on footer height */
+  padding-bottom: 50px; /* Space for the footer */
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding:  0 0;
+  position: fixed; /* Change to absolute */
+  width: 100%;
+  bottom: 0;
+}
+
+
+.active{
+  background-color: rgb(240, 18, 18);
+}
+
+#about {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 20px auto;
+  font-family: 'Verdana', sans-serif;
+  color: #444;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#about p {
+  line-height: 1.8;
+  margin: 15px 0;
+  text-align: justify;
+}
+
+#about strong {
+  color: #007bff;
+}
+
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.train-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.train-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.train-form button {
+  padding: 10px;
+  font-size: 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.train-form button:hover {
+  background: #218838;
+}
+
+.train-form input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+
+.train-info-form-container, .train-details-container {
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 15px;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.train-info-form-container h2, .train-details-container h3 {
+  text-align: center;
+  color: #333;
+}
+
+.train-info-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.train-info-form-container input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.train-info-form-container button {
+  padding: 10px;
+  font-size: 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.train-info-form-container button:hover {
+  background: #218838;
+}
+
+.train-details-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.train-details-container li {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+
+.train-info-form-container {
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+  border: 2px solid #444; /* Solid border for emphasis */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.train-info-form-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #0056b3; /* Blue color for the title */
+  margin-bottom: 15px;
+  font-family: 'Verdana', sans-serif;
+}
+
+.train-info-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.train-info-form-container input {
+  width: 100%; /* Adjusts to container width */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.train-info-form-container input::placeholder {
+  font-style: italic;
+  color: #777; /* Slightly lighter placeholder text */
+}
+
+.train-info-form-container button {
+  width: 100%; /* Full width button */
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #28a745; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.train-info-form-container button:hover {
+  background: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.train-info-form-container button:active {
+  background: #1e7e34; /* Darkest green when clicked */
+  transform: scale(1); /* Reset scale on click */
+}
+
+
+/* Styling the form by ID */
+#train-status-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the input fields by class */
+.train-form input[type="text"],
+.train-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Specific styling for input[type="text"] by ID */
+#train-number {
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+/* Button styling by class */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Hover effect for the button */
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* General Reset for Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Styling for Train Listings Table in PrecticeWebsiteHome2.html */
+.train-list-table {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.train-list-table a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.train-list-table a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Hover Effect for Train Listings */
+.train-list-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Styling for Intermediate Stops Table in PrecticeWebsiteHome3.html */
+.stop-details-table {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-top: 30px;
+}
+
+.stop-details-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.stop-details-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.stop-details-table tr:hover {
+  background-color: #ddd;
+}
+
+.stop-details-table td {
+  font-size: 14px;
+}
+
+/* Styling for the Train Information Section in PrecticeWebsiteHome3.html */
+.train-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.train-info h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.train-info p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Styling for No Trains Found Message */
+.no-train-message {
+  text-align: center;
+  font-size: 18px;
+  color: #ff6347;
+  font-weight: bold;
+}
+
+/* Add Spacing between Sections */
+.section {
+  margin-bottom: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
