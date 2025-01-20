@@ -28,7 +28,9 @@ SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
 
 # Debug
 DEBUG = config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['web-production-5939.up.railway.app', 'localhost']
+
 
 
 # Application definition
@@ -145,6 +147,7 @@ STATICFILES_DIRS=[
 ]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets')
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
