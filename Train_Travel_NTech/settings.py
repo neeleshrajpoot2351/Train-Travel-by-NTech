@@ -28,7 +28,7 @@ from decouple import config
 SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
 
 # Debug
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
