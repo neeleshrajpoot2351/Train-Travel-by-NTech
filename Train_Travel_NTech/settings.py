@@ -28,8 +28,8 @@ SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
 
 # Debug
 DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['web-production-5939.up.railway.app', 'localhost']
 
 
 
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config('DB_NAME', default='railway'),
         'USER': config('DB_USER', default='postgres'),
         'PASSWORD': config('DB_PASSWORD', default=''),
