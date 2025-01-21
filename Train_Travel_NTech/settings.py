@@ -22,11 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Secret Key
-SECRET_KEY = 'django-insecure-i&xfi$ltepp68rg+o!6z5*7b_l@#y=)1m6ud=4#3q@rq-n3%^f'
-
-
-# Debug
-DEBUG = True
+SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
+DEBUG = config('DEBUG', default='False') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,12 +83,12 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
-        'HOST': 'autorack.proxy.rlwy.net',
-        'PORT': 55120,
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='railway'),
+        'USER': config('DB_USER', default='postgres'),
+        'PASSWORD': config('DB_PASSWORD', default=''),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
     }
 }
 
