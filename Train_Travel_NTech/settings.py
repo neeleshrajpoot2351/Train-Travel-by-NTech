@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    os.getenv('CSRF_TRUSTED_ORIGIN', 'https://train-travel-by-ntech-production.up.railway.app/')
+    os.getenv('CSRF_TRUSTED_ORIGIN', 'https://train-travel-by-ntech-production.up.railway.app')
 ]
 
 # Internationalization
