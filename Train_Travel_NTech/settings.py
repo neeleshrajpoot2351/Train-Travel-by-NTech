@@ -82,14 +82,15 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 
 
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv['DB_NAME'],  # The name of the database
-        'USER': os.getenv['DB_USER'],  # Database username
-        'PASSWORD': os.getenv['DB_PASSWORD'],  # Database password
-        'HOST': os.getenv['DB_HOST'],  # Database host (use 'localhost' for local)
-        'PORT': os.getenv['DB_PORT', '5432'],  # Default PostgreSQL port
+        'NAME': os.getenv('DB_NAME'),        # Correct way to access env vars
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT', '5432'), # Default PostgreSQL port
     }
 }
 
