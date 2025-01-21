@@ -85,17 +85,16 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # or the database you are using
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-    }
+    'default': dj_database_url.config(
+        default=env('DATABASE_URL'),
+        conn_max_age=600,  # Optional: Connection age to keep alive for performance
+        ssl_require=True  # Optional: Use SSL for production database connections
+    )
 }
+
+# You can explicitly set ENGINE if needed (but dj-database-url should automatically handle this)
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
