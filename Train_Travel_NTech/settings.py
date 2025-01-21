@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Secret Key
-SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
-DEBUG = config('DEBUG', default='False') == 'True'
+SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='railway'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default=''),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        'NAME': os.getenv('DB_NAME'),  # The name of the database
+        'USER': os.getenv('DB_USER'),  # Database username
+        'PASSWORD': os.getenv('DB_PASSWORD'),  # Database password
+        'HOST': os.getenv('DB_HOST'),  # Database host (use 'localhost' for local)
+        'PORT': os.getenv('DB_PORT', '5432'),  # Default PostgreSQL port
     }
 }
 
