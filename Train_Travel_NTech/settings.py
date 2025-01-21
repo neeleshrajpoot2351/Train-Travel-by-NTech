@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Secret Key
-SECRET_KEY = config('SECRET_KEY', default='fallback-secret-key')
+SECRET_KEY = config('SECRET_KEY'),
 
 # Debug
-DEBUG = True
+DEBUG = config('DEBUG'),
 
 ALLOWED_HOSTS = ['*']
 
