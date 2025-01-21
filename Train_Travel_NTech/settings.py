@@ -85,6 +85,7 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  # or the database you are using
