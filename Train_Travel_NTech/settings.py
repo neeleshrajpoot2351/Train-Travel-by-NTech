@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY'),
 
 # Debug
-DEBUG = config('DEBUG'),
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
+        'HOST': 'autorack.proxy.rlwy.net',
+        'PORT': 55120,
         'OPTIONS': {'sslmode': config('DB_SSLMODE')},
     }
 }
