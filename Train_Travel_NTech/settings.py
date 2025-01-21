@@ -10,10 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-import environ
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,9 +29,6 @@ DEBUG = 'True'
 
 ALLOWED_HOSTS = ['*']
 
-
-env = environ.Env()
-environ.Env.read_env()
 
 
 
@@ -87,14 +82,16 @@ WSGI_APPLICATION = 'Train_Travel_NTech.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=env('DATABASE_URL'),
-        conn_max_age=600,  # Optional: Keep connections open
-        ssl_require=True  # Optional: Use SSL for production
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
+        'HOST': 'autorack.proxy.rlwy.net',
+        'PORT': '55120',
+    }
 }
 
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
