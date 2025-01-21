@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['train-travel-by-ntech-production.up.railway.app']
 
 
 
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    os.getenv('CSRF_TRUSTED_ORIGIN', 'https://web-production-5939.up.railway.app')
+    os.getenv('CSRF_TRUSTED_ORIGIN', 'https://train-travel-by-ntech-production.up.railway.app/')
 ]
 
 # Internationalization
