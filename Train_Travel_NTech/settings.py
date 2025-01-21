@@ -10,10 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import environ
 from pathlib import Path
 from decouple import config
 from dotenv import load_dotenv
 import dj_database_url
+
+from decouple import Config, Csv
+
+config = Config()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,6 +34,9 @@ DEBUG = 'True'
 
 ALLOWED_HOSTS = ['*']
 
+
+env = environ.Env()
+environ.Env.read_env()
 
 
 
