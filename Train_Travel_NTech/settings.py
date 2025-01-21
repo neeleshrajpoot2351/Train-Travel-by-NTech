@@ -13,8 +13,6 @@ import os
 from pathlib import Path
 from decouple import Config, Csv
 config = Config()
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # Secret Key
-SECRET_KEY = config('SECRET_KEY'),
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-i&xfi$ltepp68rg+o!6z5*7b_l@#y=)1m6ud=4#3q@rq-n3%^f')
+
 
 # Debug
 DEBUG = True
@@ -94,7 +93,6 @@ DATABASES = {
         'PASSWORD': 'aPcsNDfgzQCIvXHCsytFWHtoXZYWSVLg',
         'HOST': 'autorack.proxy.rlwy.net',
         'PORT': 55120,
-        'OPTIONS': {'sslmode': config('DB_SSLMODE')},
     }
 }
 
